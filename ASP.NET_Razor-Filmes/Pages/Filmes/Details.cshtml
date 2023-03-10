@@ -4,11 +4,23 @@
 @{
     ViewData["Title"] = "Details";
 }
+<style>
+    .titlename {
+        background-color: transparent;
+        border: 0;
+        font-size: 2rem;
+        height: 100%;
+        font-weight: 400;
+    }
 
-<h1>Details</h1>
+    form > div {
+        margin: 5% 0;
+    }
+</style>
+
+<h1>Detalhes do filme: <input asp-for="Filme.Titulo" class="titlename" disabled /> </h1>
 
 <div>
-    <h4>Filme</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -38,6 +50,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Filme?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Filme?.ID">Editar filme</a> |
+    <a asp-page="./Index">Voltar para a listagem</a>
 </div>
